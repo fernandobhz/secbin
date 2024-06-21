@@ -26,7 +26,7 @@
       "name": "Encrypt * Move",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
-      "args": ["enc", "*.bin", "1234", "move=..\\tst"]
+      "args": ["enc", "*.bin", "1234", "move=.\\tst"]
     },
     {
       "type": "node",
@@ -34,7 +34,7 @@
       "name": "Encrypt * Move Overwrite",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
-      "args": ["enc", "*.bin", "1234", "move=..\\tst", "overwrite"]
+      "args": ["enc", "*.bin", "1234", "move=.\\tst", "overwrite"]
     },
     {
       "type": "node",
@@ -42,7 +42,7 @@
       "name": "Encrypt * Move Overwrite Delete",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
-      "args": ["enc", "*.bin", "1234", "move=..\\tst", "overwrite", "delete"]
+      "args": ["enc", "*.bin", "1234", "move=.\\tst", "overwrite", "delete"]
     },    
     {
       "type": "node",
@@ -78,7 +78,7 @@
       "name": "Decrypt * Move",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
-      "args": ["dec", "*.secbin", "1234", "move=..\\tst"]
+      "args": ["dec", "*.secbin", "1234", "move=.\\tst"]
     },
     {
       "type": "node",
@@ -86,7 +86,7 @@
       "name": "Decrypt * Move Overwrite",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
-      "args": ["dec", "*.secbin", "1234", "move=..\\tst", "overwrite"]
+      "args": ["dec", "*.secbin", "1234", "move=.\\tst", "overwrite"]
     },
     {
       "type": "node",
@@ -94,7 +94,7 @@
       "name": "Decrypt * Move Overwrite Delete",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
-      "args": ["dec", "*.secbin", "1234", "move=..\\tst", "overwrite", "delete"]
+      "args": ["dec", "*.secbin", "1234", "move=.\\tst", "overwrite", "delete"]
     },
     {
       "type": "node",
