@@ -23,6 +23,14 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Encrypt * Overwrite Delete",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\index.mjs",
+      "args": ["enc", "*.bin", "1234", "overwrite", "delete"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Encrypt * Move",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
@@ -71,6 +79,14 @@
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\index.mjs",
       "args": ["dec", "*.secbin", "1234", "overwrite"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Decrypt * Overwrite Delete",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\index.mjs",
+      "args": ["dec", "*.secbin", "1234", "overwrite", "delete"]
     },
     {
       "type": "node",
