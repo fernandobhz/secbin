@@ -2,10 +2,11 @@
 import { existsSync } from "fs";
 import { readFile } from "fs/promises";
 import { glob } from "glob";
+import sha256 from "js-sha256";
 import { encryptFile } from "./lib/file-encrypt.mjs";
 import { decryptFile } from "./lib/file-decrypt.mjs";
 import { encryptedFileExtension } from "./consts.mjs";
-import { askPassword } from "./lib/helpers.mjs";
+import { askPassword, getPasswordHash, setPasswordHash } from "./lib/helpers.mjs";
 
 const { log: printLog, error: printError } = console;
 
@@ -38,6 +39,17 @@ if (askPasswordOrInputPassword === "ask") {
   if (!password) {
     die(`Password can't be empty`);
   }
+}
+
+const passhash = sha256(password);
+const confirmhash = await getPasswordHash();
+
+if (confirmhash) { 
+  if (confirmhash !== passhash) {
+    die(`The passhash doesn't match, please remove the passhash file from your home directory`);
+  }
+} else {
+  await setPasswordHash(passhash);
 }
 
 if (!inputPattern || !executionMode || !password || !["encrypt", "enc", "decrypt", "dec", "auto"].includes(executionMode)) {
