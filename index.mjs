@@ -25,7 +25,7 @@ const updateLog = (...args) => {
 const { version } = JSON.parse(await readFile(new URL("./package.json", import.meta.url)));
 const usageInstructions = "Usage:\n\tnpx secbin <encrypt|decrypt|auto> <inputPattern> <password|ask> [delete] [overwrite] [move=new-path]";
 
-printLog(`SecBin version: ${version}\n\n${usageInstructions}\n`);
+printLog(`SecBin version: ${version}`);
 
 let [executionMode, inputPattern, askPasswordOrInputPassword, ...flags] = process.argv.slice(2);
 let password = askPasswordOrInputPassword;
@@ -39,6 +39,10 @@ if (askPasswordOrInputPassword === "ask") {
   if (!password) {
     die(`Password can't be empty`);
   }
+}
+
+if (!password) {
+  die(usageInstructions);
 }
 
 const passhash = sha256(password);
